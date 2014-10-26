@@ -1,0 +1,19 @@
+---
+title: "README"
+author: "Boudewijn Aasman"
+date: "October 26, 2014"
+output: html_document
+---
+
+### To run run_analysis.R:
+
+- change directory to appropiate directory of your downloaded Samsung data set at every setwd() statement
+- highlight code and run
+- the resulting data frame "tidyData" will contain the final tidy data set
+
+### to read in the exported tidy data set
+
+```
+#set appropiate directory
+df = read.table(file = "tidyData,txt",header = TRUE)
+```

@@ -1,0 +1,47 @@
+---
+title: "CODEBOOK"
+author: "Boudewijn Aasman"
+date: "October 26, 2014"
+output: html_document
+---
+
+
+
+###Transformations to original data:
+
+Features:
+-
+- set it to the appropiate directory to read in the features data set
+- change the features column to a vector to use later on
+
+Data:
+-
+- set to the appropiate directory
+- read in the subject, activity, and X_train data and merge them together
+- perform the same with the test data
+- use rbind to paste them on top of each other, then order them using subject
+- loop through data frame to give column names from the features vector 
+- use the grepl function to only select columns regarding the mean and std
+- because meanFreq() gets included as well, loop though the data frame to mark only mean and std, then subset the data frame using that mark
+- use cbind to include the activity and subject vectors to the columns of interest
+
+Activity descriptions:
+-
+- loop through the entire data frame
+- use if else statements in order to appropiately label each activity
+
+Tidy data set:
+-
+- use aggregate function in order to get the mean of all variables of interest by subject and activity
+- use write.table to export tidy data set
+
+
+___________________________________________________________________________________
+###Variables in the tidy data set:
+
+
+- activity: small description of what activity was done by the subject
+- subject: which subject the data was measured on
+- columns 3 through 67: Each column represents eather the normalized mean or standard deviation of whatever measure was taken based on the subject and the activity of that subject
+
+
